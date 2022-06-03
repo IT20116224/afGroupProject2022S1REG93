@@ -1,13 +1,18 @@
 function App(){
     return(
-        <div>
-            AF Group project
+        <ContextProvider>
+        <Router>        
+            <Nav/>
+            <Switch>
+                <Route exact path='/' component={PanelMembers}/>
+                <Route exact path='/registerpm' component={RegisterPanelMember}/>
+                <Route exact path='/editpm/:id' component={EditPanelMember}/>
+                <Route exact path='/profile/:id' component={ProfilePanelMember}/>
+            </Switch>        
+        </Router>
+        </ContextProvider>
 
-            use routes to connect components
-            use react router dom version 5.2.0 if you get errors.
-
-        </div>
-    )
+)
 }
 
 export default App;
