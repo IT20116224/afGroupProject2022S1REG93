@@ -3,10 +3,14 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 require("dotenv").config();
+const panelmembers = require("./models/PanelMSchema");
+const router = require("./routes/router");
 
 const app = express();
 app.use(cors());
+app.use(express.json());
 
+app.use(router);
 
 //backend port
 const PORT = process.env.PORT || 8070;
